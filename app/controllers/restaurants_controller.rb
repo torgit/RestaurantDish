@@ -6,7 +6,7 @@ class RestaurantsController < ApplicationController
         else
             @restaurants = Restaurant.all
         end
-        render json: @restaurants
+        render json: {restaurants: @restaurants}
     end
 
     def show
@@ -16,6 +16,6 @@ class RestaurantsController < ApplicationController
         else
             @restaurant = Restaurant.find(params[:id])
         end
-        render json: @restaurant
+        render json: {restaurants: @restaurant}
     end
 end
